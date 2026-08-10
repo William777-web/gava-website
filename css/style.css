@@ -285,3 +285,8 @@ h2{font-size:clamp(26px,4vw,36px);color:var(--green);font-weight:800;line-height
   .svc-grid{grid-template-columns:1fr}
   .ref-grid{grid-template-columns:1fr}
 }
+
+/* ---------- 语言切换 ---------- */
+.lang-switch{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:6px 10px;font-size:12px;font-weight:700;color:var(--teal);border:1.5px solid var(--teal);border-radius:99px;margin-left:6px;transition:background .2s,color .2s}
+.lang-switch:hover{background:var(--wash);color:var(--green)}
+@media (max-width:760px){.lang-switch{margin:6px 0 2px;align-self:flex-start}}
