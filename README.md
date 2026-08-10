@@ -44,3 +44,7 @@ python3 -m http.server 8080 -d website
 - 内容更新：直接改 `index.html` 文案；图片放 `assets/products/`；可对外 PDF 放 `assets/downloads/`
 - 品牌规范：与品牌手册一致（色彩/字体/徽标），改动前先看 `app/web/brandbook.html`
 - 参考学习：排版与使用参考 Camfil / Donaldson / 洁科膜等同类 B2B 过滤网站（产品→应用→资源→信任→联系 的漏斗结构 + 总拥有成本 TCO 话术）
+
+## 自动部署
+- 本仓库与 Vercel 项目 `website` 已连接：push 到 `main` 自动上线 https://www.gavatech.cn
+- 生产环境变量：GAVA_SMTP_HOST / PORT / USER / PASS / MAIL_TO（在 Vercel 控制台配置）
