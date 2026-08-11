@@ -1,4 +1,4 @@
-# 🌐 伽桦环保 · 对外官网
+# 🌐 伽桦智能科技 · 对外官网
 
 > 客户版官网（静态站），与内部看板（app/web）完全分离。**不含**供应商名、SKU、内部系统与成本信息。
 
@@ -17,7 +17,7 @@ website/
 
 ## 本地预览
 ```bash
-cd "/Users/william/Desktop/workspace for codex/projects/project_006_伽桦环保工业过滤"
+cd "/Users/william/Desktop/workspace for codex/projects/project_006_伽桦智能科技工业过滤"
 python3 scripts/start_daemon.py 8902     # 双 fork 守护启动（不会被会话回收）
 # 浏览器打开 http://127.0.0.1:8902/site/  （内部预览路由）
 # 或独立预览：
