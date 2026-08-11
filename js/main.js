@@ -62,8 +62,11 @@
       // 真实提交：POST /api/site_quote（SMTP 发到公司邮箱；未配置邮箱时自动演示模式）
       var payload = {
         name: name,
+        email: form.email ? form.email.value.trim() : "",
         company: form.company.value.trim(),
         industry: form.industry.value,
+        category: form.category ? form.category.value : "",
+        quantity: form.quantity ? form.quantity.value.trim() : "",
         message: msg
       };
       var btn = form.querySelector('button[type=submit]');

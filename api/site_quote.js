@@ -70,7 +70,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true, mode: 'demo', msg: '邮箱未配置，当前为演示提交' });
   }
   const subject = '[官网询盘] ' + name + ' · ' + (data.company || '未填公司') + ' · ' + (data.industry || '未填行业');
-  const text = '来自伽桦环保官网「获取报价/样品」表单：\n\n称呼：' + name + '\n公司：' + (data.company || '—') + '\n行业：' + (data.industry || '—') + '\n需求描述：\n' + message + '\n';
+  const text = '来自伽桦环保官网「获取报价/样品」表单：\n\n称呼：' + name + '\n邮箱：' + (data.email || '—') + '\n公司：' + (data.company || '—') + '\n行业：' + (data.industry || '—') + '\n产品类别：' + (data.category || '—') + '\n预计数量：' + (data.quantity || '—') + '\n需求描述：\n' + message + '\n';
   try {
     await smtpSend({ ...cfg, subject, text });
     return res.status(200).json({ ok: true, mode: 'email' });
