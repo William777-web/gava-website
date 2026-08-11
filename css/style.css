@@ -1,5 +1,5 @@
 /* ============================================================
-   伽桦智能科技 GAVA TECH · 官网样式
+   深圳市伽桦智能科技有限公司 GAVA TECH · 官网样式
    品牌规范：伽桦绿 #0E5A3A / 清澈青 #12A594 / 米白 #F6F3EA
             墨绿黑 #1B2A22 / 灰绿 #6B7B72 / 线框 #DCE6DF
    ============================================================ */
@@ -363,3 +363,9 @@ h2{font-size:clamp(26px,4vw,36px);color:var(--green);font-weight:800;line-height
 .seg-main .btn-ghost{color:#fff;border-color:#7FE0C8}
 .seg-main .btn-ghost:hover{background:rgba(255,255,255,.12)}
 @media (max-width:760px){.seg-grid{grid-template-columns:1fr}}
+
+/* 长品牌名适配 */
+.brand-name{font-size:15.5px}
+.brand-name small{font-size:8px;letter-spacing:1.8px}
+@media (max-width:760px){.brand-name{font-size:13.5px}}
+@media (max-width:380px){.brand-name{font-size:12px}.brand-name small{font-size:7px;letter-spacing:1px}}
