@@ -1,22 +1,363 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.gavatech.cn/</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.gavatech.cn/en/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/af-f5-f9.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-f5-f9.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-f5-f9.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-f5-f9.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/af-f5-f9.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-f5-f9.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-f5-f9.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-f5-f9.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/af-g1-g4.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-g1-g4.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-g1-g4.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-g1-g4.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/af-g1-g4.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-g1-g4.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-g1-g4.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-g1-g4.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/af-hepa-h13.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-hepa-h13.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-hepa-h13.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-hepa-h13.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/af-hepa-h13.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-hepa-h13.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-hepa-h13.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-hepa-h13.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/dc-bag-nt.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/dc-bag-nt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/dc-bag-nt.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/dc-bag-nt.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/dc-bag-nt.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/dc-bag-nt.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/dc-bag-nt.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/dc-bag-nt.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/fc-bigflow-40.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-bigflow-40.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-bigflow-40.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-bigflow-40.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/fc-bigflow-40.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-bigflow-40.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-bigflow-40.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-bigflow-40.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/fc-pp-ac.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-pp-ac.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-pp-ac.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-pp-ac.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/fc-pp-ac.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-pp-ac.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-pp-ac.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-pp-ac.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/fc-press-pa.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-press-pa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-press-pa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-press-pa.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/fc-press-pa.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-press-pa.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-press-pa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-press-pa.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/fc-press-pet.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-press-pet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-press-pet.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-press-pet.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/fc-press-pet.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-press-pet.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-press-pet.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-press-pet.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/fc-press-pp.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-press-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-press-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-press-pp.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/fc-press-pp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/fc-press-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/fc-press-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/fc-press-pp.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/ft-aramid.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-aramid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-aramid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-aramid.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/ft-aramid.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-aramid.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-aramid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-aramid.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/ft-pet-pp.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-pet-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-pet-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-pet-pp.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/ft-pet-pp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-pet-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-pet-pp.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-pet-pp.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/ft-pps-glass-basalt.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-pps-glass-basalt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-pps-glass-basalt.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-pps-glass-basalt.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/ft-pps-glass-basalt.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-pps-glass-basalt.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-pps-glass-basalt.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-pps-glass-basalt.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/ft-ss-carbon-uhmwpe.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-ss-carbon-uhmwpe.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-ss-carbon-uhmwpe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-ss-carbon-uhmwpe.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/ft-ss-carbon-uhmwpe.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ft-ss-carbon-uhmwpe.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ft-ss-carbon-uhmwpe.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ft-ss-carbon-uhmwpe.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/lf-bag-1to5.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/lf-bag-1to5.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/lf-bag-1to5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/lf-bag-1to5.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/lf-bag-1to5.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/lf-bag-1to5.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/lf-bag-1to5.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/lf-bag-1to5.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/lf-bag-ny-fx.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/lf-bag-ny-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/lf-bag-ny-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/lf-bag-ny-fx.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/lf-bag-ny-fx.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/lf-bag-ny-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/lf-bag-ny-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/lf-bag-ny-fx.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/lf-bag-pe-fx.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/lf-bag-pe-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/lf-bag-pe-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/lf-bag-pe-fx.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/lf-bag-pe-fx.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/lf-bag-pe-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/lf-bag-pe-fx.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/lf-bag-pe-fx.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/ro-ulp.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ro-ulp.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ro-ulp.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ro-ulp.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/ro-ulp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/ro-ulp.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/ro-ulp.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/ro-ulp.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/sc-mesh-01.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/sc-mesh-01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/sc-mesh-01.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/sc-mesh-01.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/sc-mesh-01.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/sc-mesh-01.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/sc-mesh-01.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/sc-mesh-01.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/wt-housing.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/wt-housing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/wt-housing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/wt-housing.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/wt-housing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/wt-housing.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/wt-housing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/wt-housing.html"/>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
