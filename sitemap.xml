@@ -522,4 +522,58 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/sg-cloth.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/sg-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/sg-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/sg-cloth.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/sg-cloth.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/sg-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/sg-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/sg-cloth.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/af-cloth.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-cloth.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/af-cloth.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/af-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/af-cloth.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/af-cloth.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/products/al-sleeve.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/al-sleeve.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/al-sleeve.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/al-sleeve.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/products/al-sleeve.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/products/al-sleeve.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/products/al-sleeve.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/products/al-sleeve.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
