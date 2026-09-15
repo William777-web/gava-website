@@ -2,7 +2,12 @@
 // 环境变量：
 //   GAVA_SMTP_HOST / GAVA_SMTP_PORT(465) / GAVA_SMTP_USER / GAVA_SMTP_PASS / GAVA_MAIL_TO
 //   GAVA_KV_REST_URL / GAVA_KV_TOKEN  （可选：生产落库用 Upstash KV REST；未配置时退回本地文件（自托管））
-// 落库优先级：KV（生产持久） → 本地 data/官网询盘.csv（自托管/本地） → 都不可用则如实返回失败（不假成功）
+// 落库优先级：KV（生产持久） → 本地 data/官网询盘.csv（自托管/本地） → 都不可用则不发成功、如实告知
+// 返回 mode 含义（前端按 mode 决定提示文案，语义必须真实）：
+//   email            = 已落库 + 已发通知邮件
+//   stored_no_notify = 已落库，但通知邮件未送达（SMTP 未配或发信失败）
+//   email_no_store   = 未落库（无 KV 且无持久磁盘），但通知邮件已送达 —— 线索不丢，编号未入库
+//   503 code=storage = 既未落库也未发出通知（不假成功）
 import tls from 'node:tls';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -219,12 +224,11 @@ export default async function handler(req, res) {
     } catch (e) { stored = false; }
   }
   if (!stored) {
-    // 落库失败：如实返回失败（不清空前端表单；前端展示备用联系方式）
-    console.error('[site_quote] storage unavailable, inquiry NOT persisted');
-    return res.status(503).json({ ok: false, code: 'storage', error: 'Service temporarily unavailable' });
+    // 落库不可用（常见于 Vercel 未配 KV）：不再直接失败，改为「至少把线索通知到人」
+    console.warn('[site_quote] storage unavailable; falling back to email-only notification');
   }
 
-  // 6. 发送通知（落库成功后再通知；通知失败不影响已落库询盘）
+  // 6. 发送通知。落库成功后再通知；落库失败时**仍然尝试通知**——邮件送到即线索未丢。
   const cfg = {
     host: process.env.GAVA_SMTP_HOST || '',
     port: Number(process.env.GAVA_SMTP_PORT || 465),
@@ -232,18 +236,30 @@ export default async function handler(req, res) {
     pass: process.env.GAVA_SMTP_PASS || '',
     to: process.env.GAVA_MAIL_TO || ''
   };
-  if (!(cfg.host && cfg.user && cfg.pass && cfg.to)) {
-    // SMTP 未配置：不显示成功；但询盘已落库，明确告知状态（mode=stored_no_notify）
+  const mailReady = !!(cfg.host && cfg.user && cfg.pass && cfg.to);
+  if (!mailReady) {
+    // SMTP 未配置：没落库也没通知 → 如实失败（不假成功）
+    if (!stored) {
+      console.error('[site_quote] storage unavailable AND smtp not configured; inquiry NOT delivered');
+      return res.status(503).json({ ok: false, code: 'storage', error: 'Service temporarily unavailable' });
+    }
+    // 已落库、仅通知未配置：明确告知状态（mode=stored_no_notify）
     return res.status(200).json({ ok: true, mode: 'stored_no_notify', inquiry_id: record[0] });
   }
   const subject = '[官网询盘] ' + name + ' · ' + (data.company || '未填公司') + ' · ' + (data.category || '未填类别');
-  const text = '来自伽桦智能官网「获取报价/样品」表单：\n\n询盘编号：' + record[0] + '\n提交时间：' + record[1] + '\n来源页面：' + record[2] + '\n页面语言：' + record[3] + '\n称呼：' + name + '\n邮箱：' + email + '\nWhatsApp/电话：' + (data.whatsapp || '—') + '\n公司：' + (data.company || '—') + '\n行业：' + (data.industry || '—') + '\n产品类别：' + (data.category || '—') + '\n预计数量：' + (data.quantity || '—') + '\n需求描述：\n' + message + '\n';
+  const text = '来自伽桦智能官网「获取报价/样品」表单：\n\n询盘编号：' + record[0] + '\n提交时间：' + record[1] + '\n来源页面：' + record[2] + '\n页面语言：' + record[3] + '\n称呼：' + name + '\n邮箱：' + email + '\nWhatsApp/电话：' + (data.whatsapp || '—') + '\n公司：' + (data.company || '—') + '\n行业：' + (data.industry || '—') + '\n产品类别：' + (data.category || '—') + '\n预计数量：' + (data.quantity || '—') + '\n需求描述：\n' + message + '\n' +
+    (stored ? '' : '\n⚠️ 本封询盘**未写入台账**（服务端无 KV 且无持久磁盘），请人工登记。\n');
   try {
     await smtpSend({ ...cfg, subject, text });
+    if (!stored) {
+      console.warn('[site_quote] notified by email but NOT persisted: ' + record[0]);
+      return res.status(200).json({ ok: true, mode: 'email_no_store', stored: false, inquiry_id: record[0] });
+    }
     return res.status(200).json({ ok: true, mode: 'email', inquiry_id: record[0] });
   } catch (e) {
-    // 邮件失败但询盘已落库：不提示成功，明确告知（不向客户暴露 SMTP 内部细节）
+    // 邮件失败：已落库则告知未通知；未落库则如实失败（不假成功）
     console.error('[site_quote] email failed for ' + record[0] + ': ' + e.message);
+    if (!stored) return res.status(503).json({ ok: false, code: 'storage', error: 'Service temporarily unavailable' });
     return res.status(200).json({ ok: true, mode: 'stored_no_notify', inquiry_id: record[0] });
   }
 }

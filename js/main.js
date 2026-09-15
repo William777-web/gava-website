@@ -244,6 +244,7 @@
         successTail: '。我们会在工作日 24 小时内回复；如急请 WhatsApp +86 17796335657 或邮箱 info@gavatech.cn。',
         storedNoNotify: '已记录您的需求（编号：',
         storedNoNotifyTail: '），但内部通知暂未送达，我们恢复后会第一时间处理；急事请 WhatsApp +86 17796335657 或邮箱 info@gavatech.cn。',
+        emailedNoStore: '✓ 已收到您的需求，并已通知我们的销售团队；请保留此参考编号：',
         failed: '提交尚未成功，请稍后重试，或直接联系 WhatsApp +86 17796335657 / 邮箱 info@gavatech.cn。',
         network: '网络异常，提交尚未成功。请检查网络后重试，或直接联系 WhatsApp +86 17796335657 / 邮箱 info@gavatech.cn。',
         server: '服务暂时不可用，提交尚未成功。请稍后重试，或直接联系 WhatsApp +86 17796335657 / 邮箱 info@gavatech.cn。'
@@ -257,6 +258,7 @@
         successTail: '. We reply within 24 hours on business days. Urgent? WhatsApp +86 17796335657 or info@gavatech.cn.',
         storedNoNotify: 'Your inquiry is recorded (ID: ',
         storedNoNotifyTail: '), but our internal notification is temporarily unavailable. We will follow up as soon as it recovers. Urgent? WhatsApp +86 17796335657 or info@gavatech.cn.',
+        emailedNoStore: '✓ We have received your inquiry and notified our sales team. Please keep this reference: ',
         failed: 'Submission not completed. Please retry later, or contact WhatsApp +86 17796335657 / info@gavatech.cn.',
         network: 'Network error. Submission not completed. Please check your connection and retry, or contact WhatsApp +86 17796335657 / info@gavatech.cn.',
         server: 'Service temporarily unavailable. Submission not completed. Please retry later, or contact WhatsApp +86 17796335657 / info@gavatech.cn.'
@@ -307,6 +309,10 @@
         .then(function (data) {
           if (data && data.ok && data.mode === 'email') {
             showNote(T.success + (data.inquiry_id || '') + T.successTail, true);
+            form.reset(); renderContext();
+          } else if (data && data.ok && data.mode === 'email_no_store') {
+            /* 通知邮件已送达、但未入库：如实告知并给出编号，不谎称已登记台账 */
+            showNote(T.emailedNoStore + (data.inquiry_id || '') + T.successTail, true);
             form.reset(); renderContext();
           } else if (data && data.ok && data.mode === 'stored_no_notify') {
             showNote(T.storedNoNotify + (data.inquiry_id || '') + T.storedNoNotifyTail, false);
