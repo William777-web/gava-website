@@ -82,10 +82,20 @@ function smtpSend({ host, port, user, pass, to, subject, text }) {
   });
 }
 
+// 时间一律以 Asia/Shanghai 输出。
+// Vercel 运行在 UTC，若直接用本地时间，台账「提交时间」会比北京时间晚 8 小时，
+// 会直接导致「2 小时未认领 / 24 小时未回复」监控算错。
+function shanghaiParts(d = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+  }).formatToParts(d).reduce((acc, x) => (acc[x.type] = x.value, acc), {});
+  return parts;
+}
+
 function nowStr() {
-  const d = new Date();
-  const p = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+  const p = shanghaiParts();
+  return `${p.year}-${p.month}-${p.day} ${p.hour}:${p.minute}:${p.second}`;
 }
 
 // 生成唯一询盘编号：INQ-YYYYMMDD-XXXX（当日序号）
@@ -229,10 +239,9 @@ export default async function handler(req, res) {
   // 编号策略（必须保证唯一，否则台账去重会把不同询盘合并）：
   //   - 默认用「日期 + 时分秒 + 随机两位」——不依赖任何存储，天然不重号
   //   - 若本地 CSV 落库成功，再改写为顺序号 INQ-YYYYMMDD-0001（便于人工引用）
-  const nowD = new Date();
-  const p2 = (n) => String(n).padStart(2, '0');
-  const dayStr = `${nowD.getFullYear()}${p2(nowD.getMonth()+1)}${p2(nowD.getDate())}`;
-  const timeStr = `${p2(nowD.getHours())}${p2(nowD.getMinutes())}${p2(nowD.getSeconds())}`;
+  const nowD = shanghaiParts();
+  const dayStr = `${nowD.year}${nowD.month}${nowD.day}`;
+  const timeStr = `${nowD.hour}${nowD.minute}${nowD.second}`;
   const id = 'INQ-' + dayStr + '-' + timeStr + String(Math.floor(Math.random() * 90) + 10);
   const record = [
     id, nowStr(), clean(data.page) || '/', clean(data.lang) || 'zh',
