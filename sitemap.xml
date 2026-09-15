@@ -576,4 +576,40 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.gavatech.cn/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/terms.html"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/terms.html"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/privacy.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.gavatech.cn/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.gavatech.cn/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gavatech.cn/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gavatech.cn/privacy.html"/>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
