@@ -226,7 +226,14 @@ export default async function handler(req, res) {
   }
 
   // 5. 先落库，生成唯一询盘编号
-  const id = 'INQ-' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + String(Math.floor(Math.random()*9000)+1000);
+  // 编号策略（必须保证唯一，否则台账去重会把不同询盘合并）：
+  //   - 默认用「日期 + 时分秒 + 随机两位」——不依赖任何存储，天然不重号
+  //   - 若本地 CSV 落库成功，再改写为顺序号 INQ-YYYYMMDD-0001（便于人工引用）
+  const nowD = new Date();
+  const p2 = (n) => String(n).padStart(2, '0');
+  const dayStr = `${nowD.getFullYear()}${p2(nowD.getMonth()+1)}${p2(nowD.getDate())}`;
+  const timeStr = `${p2(nowD.getHours())}${p2(nowD.getMinutes())}${p2(nowD.getSeconds())}`;
+  const id = 'INQ-' + dayStr + '-' + timeStr + String(Math.floor(Math.random() * 90) + 10);
   const record = [
     id, nowStr(), clean(data.page) || '/', clean(data.lang) || 'zh',
     name, clean(data.company), email, clean(data.whatsapp),
@@ -239,12 +246,17 @@ export default async function handler(req, res) {
   if (kv.ok) stored = true;
   else {
     // 退回本地 CSV（自托管/本地运行时）
+    const uniqueId = record[0];
     try {
       const rows = csvRead(INQUIRY_FILE);
       record[0] = nextInquiryId(rows);
       csvAppend(INQUIRY_FILE, INQUIRY_HEADERS, record);
       stored = true;
-    } catch (e) { stored = false; }
+    } catch (e) {
+      // 写盘失败：**必须把编号恢复成唯一号**，否则当天所有询盘会同号，被台账去重合并
+      record[0] = uniqueId;
+      stored = false;
+    }
   }
   if (!stored) {
     // 落库不可用（常见于 Vercel 未配 KV）：不再直接失败，改为「至少把线索通知到人」
