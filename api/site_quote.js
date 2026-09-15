@@ -141,18 +141,41 @@ function csvAppend(file, headers, values) {
   return true;
 }
 
-// KV 落库（生产持久）：GAVA_KV_REST_URL + GAVA_KV_TOKEN
+// KV 落库（生产持久）：支持三种常见环境变量命名，任一组配好即可
+//   GAVA_KV_REST_URL / GAVA_KV_TOKEN                    本项目原命名
+//   UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN   Upstash / Vercel Marketplace 集成注入
+//   KV_REST_API_URL / KV_REST_API_TOKEN                 Vercel KV 旧命名
+function kvCreds() {
+  const pairs = [
+    ['GAVA_KV_REST_URL', 'GAVA_KV_TOKEN'],
+    ['UPSTASH_REDIS_REST_URL', 'UPSTASH_REDIS_REST_TOKEN'],
+    ['KV_REST_API_URL', 'KV_REST_API_TOKEN'],
+  ];
+  for (const [uk, tk] of pairs) {
+    const url = process.env[uk], token = process.env[tk];
+    if (url && token) return { url: String(url).replace(/\/+$/, ''), token: String(token) };
+  }
+  return null;
+}
+
 async function kvAppend(record) {
-  const url = process.env.GAVA_KV_REST_URL;
-  const token = process.env.GAVA_KV_TOKEN;
-  if (!url || !token) return { ok: false, reason: 'no_kv' };
+  const c = kvCreds();
+  if (!c) return { ok: false, reason: 'no_kv' };
   try {
     const key = 'inquiry:' + record[0];
-    await fetch(url, {
+    // Upstash REST「body-style」：POST <REST_URL>，请求体为命令数组 ["SET", key, value]
+    // 注意：不能用 {"key":..,"value":..} 这种 JSON 对象——Upstash 会返回错误，
+    // 若不再校验响应，就会「假成功」把询盘吞掉，故此处必须校验状态与 result。
+    const res = await fetch(c.url, {
       method: 'POST',
-      headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ key, value: JSON.stringify(record) })
+      headers: { 'Authorization': 'Bearer ' + c.token, 'Content-Type': 'application/json' },
+      body: JSON.stringify(['SET', key, JSON.stringify(record)])
     });
+    if (!res.ok) return { ok: false, reason: 'kv_http_' + res.status };
+    let parsed = null;
+    try { parsed = JSON.parse(await res.text()); } catch (e) { parsed = null; }
+    const okResult = parsed && !parsed.error && String(parsed.result).toUpperCase() === 'OK';
+    if (!okResult) return { ok: false, reason: 'kv_result' };
     return { ok: true };
   } catch (e) {
     return { ok: false, reason: 'kv_error' };
