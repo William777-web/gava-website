@@ -128,9 +128,15 @@ h3{color:var(--ink)}
 .btn-sm{padding:9px 16px;font-size:13.5px}
 
 /* ---------- 首屏：左文案 + 右真实产品组合（Catalogue plate） ---------- */
-.hero{position:relative;background:var(--bg);padding:132px var(--pad) 64px;border-bottom:1px solid var(--line)}
+.hero{position:relative;background:var(--surface);padding:84px var(--pad) 40px;border-bottom:1px solid var(--line)}
 .hero-inner{max-width:var(--w);margin:0 auto;display:grid;
-  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:56px;align-items:center}
+  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  column-gap:56px;row-gap:24px;align-items:center}
+/* 显式放置：DOM 顺序是「文案 → 业务入口 → 图片」（手机端按此顺序堆叠，
+   让入口远离右下角 WhatsApp 悬浮球）；桌面用网格把它放到图片下方、跨两列。 */
+.hero-copy{grid-column:1;grid-row:1}
+.hero-media{grid-column:2;grid-row:1}
+.hero-links{grid-column:1/-1;grid-row:2}
 .hero-copy{min-width:0}
 .hero-eyebrow{font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:2.6px;color:var(--green);
   margin-bottom:20px;text-transform:uppercase;display:flex;align-items:center;gap:12px}
@@ -146,19 +152,23 @@ h3{color:var(--ink)}
 .hero-meta span{font-size:13px;color:var(--muted);line-height:1.5}
 .hero-slogan{font-size:12.5px;color:var(--muted);margin-top:24px;letter-spacing:.3px}
 
-/* 首屏产品组合：无边框"图录页"，与下方产品卡片明确区分 */
-.hero-showcase{display:grid;grid-template-columns:1.12fr .88fr;gap:14px;min-width:0}
-.hs-col{display:grid;gap:14px;min-width:0}
-.hs-item{display:flex;flex-direction:column;min-width:0;
+/* 首屏主图（2026-09-16）：一整幅可供应/寻源品类组合图，与左侧文案处在同一片连续底色中 */
+.hero-media{min-width:0}
+/* 产品组合图：无容器底色、无边框、无圆角裁切、无投影。
+   素材为**透明背景 PNG**（交付包 2026-09-18），直接合成在首屏底色 var(--surface) 上
+   → 不存在矩形边界，也不存在色差；页面底色变化无需重出图。
+   （历史做法 scripts/blend_hero_image.py 为"不透明图重打光"，已不再用于首屏。） */
+.hero-figure{margin:0}
+.hero-figure img{display:block;width:100%;height:auto;max-width:100%}
+/* 三条业务方向：独立的横向入口区，位于首屏主内容下方（不再附着在图片下方） */
+.hero-links{display:grid;margin:0;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.hero-link{display:block;min-width:0;padding-top:9px;border-top:2px solid var(--green);
   transition:transform var(--dur) var(--ease)}
-.hs-item:hover{transform:translateY(-2px)}
-.hs-img{display:block;position:relative;background:var(--imgbg);border-radius:var(--radius);
-  aspect-ratio:1/1;overflow:hidden}
-.hs-img img{width:100%;height:100%;object-fit:contain;padding:10px}
-.hs-meta{display:block;padding:10px 2px 2px;border-top:2px solid var(--green);margin-top:10px}
-.hs-meta b{display:block;font-size:15px;color:var(--ink);font-weight:700;line-height:1.35}
-.hs-meta span{display:block;font-family:var(--en);font-size:11.5px;color:var(--muted);letter-spacing:.3px;margin-top:2px}
-.hs-item:hover .hs-meta b{color:var(--green)}
+.hero-link:hover{transform:translateY(-2px)}
+.hero-link b{display:block;font-size:15px;color:var(--ink);font-weight:700;line-height:1.35}
+.hero-link span{display:block;font-family:var(--en);font-size:11.5px;color:var(--muted);letter-spacing:.3px;margin-top:2px}
+.hero-link:hover b{color:var(--green)}
 
 /* ---------- 三条业务方向：明确的大入口（不是卡片阵列） ---------- */
 .seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
@@ -451,6 +461,12 @@ h3{color:var(--ink)}
 .pd-img{position:relative;background:var(--imgbg);border-radius:var(--radius);display:flex;
   align-items:center;justify-content:center;padding:16px;aspect-ratio:1/1;min-width:0}
 .pd-img img{width:100%;height:100%;object-fit:contain;display:block}
+/* 图片替换包 2026-09-15：主图列容器（主图 + 可选 PP 样品说明 / 开口局部配图） */
+.pd-media{min-width:0;display:flex;flex-direction:column;gap:14px}
+.pd-note{font-size:12.5px;color:var(--muted);line-height:1.7;margin:0;padding:0 2px}
+.pd-detail{margin:0;background:var(--imgbg);border-radius:var(--radius);overflow:hidden}
+.pd-detail img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;display:block}
+.pd-detail figcaption{font-size:12px;color:var(--muted);line-height:1.6;padding:9px 13px;border-top:1px solid var(--line)}
 .pd-info{min-width:0;display:flex;flex-direction:column}
 .pd-cat{display:inline-block;align-self:flex-start;background:var(--green-t);color:var(--green);font-size:12px;
   font-weight:700;border-radius:var(--radius);padding:4px 12px;margin-bottom:12px}
@@ -524,16 +540,16 @@ h3{color:var(--ink)}
   .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:960px){
-  .hero-inner{grid-template-columns:1fr;gap:30px}
-  .hero{padding:104px var(--pad) 28px}
-  /* 窄屏：三条业务方向必须落在首屏可视区 → 产品组合压成一排三张「图录页」 */
-  .hero-showcase{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:560px;gap:12px}
-  .hero-showcase .hs-col{display:contents}
-  .hs-meta{margin-top:8px;padding-top:8px}
-  .hs-meta b{font-size:12.5px;line-height:1.3}
-  /* 窄屏三列很窄：禁止在中文词中间断行，只在「·」两侧的空格处折行
-     （否则会出现「FC-HYDRAULIC · 液 / 压滤芯」这类拆词） */
-  .hs-meta span{font-size:10px;letter-spacing:0;word-break:keep-all}
+  .hero-inner{grid-template-columns:1fr;gap:20px}
+  .hero-copy,.hero-media,.hero-links{grid-column:auto;grid-row:auto}
+  .hero-links{margin:0 0 16px}
+  /* 平板/窄屏首屏内距收紧：为「三条业务方向落在首屏」补回余量（EN 文案更长，是约束方） */
+  .hero{padding:76px var(--pad) 14px}
+  /* 窄屏：为「三条业务方向落在首屏」留余量 —— 融合后图片画布不可见，
+     图片宽度只决定产品在屏上的实际大小；230px 宽（高 183px）时产品与改造前相当。 */
+  .hero-media{gap:12px}
+  .hero-figure{max-width:260px}
+  .hero-links{margin:0 0 14px;gap:14px}
   .seg-grid{grid-template-columns:1fr;border-top:1px solid var(--line)}
   .seg-item{border-right:0;border-bottom:1px solid var(--line);padding:24px 0!important}
   .about-inner{grid-template-columns:1fr;gap:26px}
@@ -547,6 +563,7 @@ h3{color:var(--ink)}
   /* --- 产品详情页：产品名 + 主询价入口前置到长参数表之前 --- */
   .pd{grid-template-columns:1fr;gap:20px;padding:18px}
   .pd-img{aspect-ratio:1/1;max-width:300px;width:100%;margin:0 auto;padding:10px}
+  .pd-detail{max-width:300px;width:100%;margin:0 auto}
   .pd-info h1{font-size:26px}
   .pd-table{order:9}                    /* 参数表下沉到最后 */
   .pd-cta{order:8;margin-bottom:22px}
@@ -596,7 +613,14 @@ h3{color:var(--ink)}
   .nav-toggle{display:flex}
   .lang-switch{margin:6px 0 2px;align-self:flex-start}
   /* 手机端首屏收紧：让「三条业务方向」在 360/390 也完整落在首屏内（中英文一致） */
-  .hero{padding:94px var(--pad) 22px}
+  .hero{padding:72px var(--pad) 12px}
+  .hero-inner{gap:22px}
+  /* 手机端：产品图居中、主体尺寸与改造前相当；业务入口压成一行三个方向名，不占掉首屏余量 */
+  .hero-figure{max-width:240px;margin:0 auto}
+  .hero-links{margin:0 0 12px;gap:8px}
+  .hero-link{padding-top:7px}
+  .hero-link b{font-size:13.5px;line-height:1.3}
+  .hero-link span{display:none}
   .hero h1{font-size:clamp(30px,8.6vw,46px)}
   .hero-lead{margin:12px 0 16px;font-size:14.5px;line-height:1.7}
   .hero-actions{gap:8px}
@@ -604,7 +628,8 @@ h3{color:var(--ink)}
   .hero-meta{margin-top:18px;padding-top:12px;gap:14px}
   .hero-meta b{font-size:21px}
   .hero-slogan{margin-top:8px}
-  .hero-showcase{gap:10px}
+  .hero-meta{margin-top:14px;padding-top:10px}
+  .hero-media{gap:10px}
   .photo-actions{flex-direction:column;align-items:stretch}
   .photo-actions .btn{width:100%}
   .factory-grid{grid-template-columns:1fr}
@@ -629,7 +654,7 @@ h3{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;
     scroll-behavior:auto!important}
-  .btn:hover,.cat-card:hover,.feat-card:hover,.hs-item:hover{transform:none}
+  .btn:hover,.cat-card:hover,.feat-card:hover,.hero-link:hover{transform:none}
 }
 
 /* ---------- 反垃圾蜜罐字段：对真人不可见（位置移出视口），机器人会误填 ---------- */
